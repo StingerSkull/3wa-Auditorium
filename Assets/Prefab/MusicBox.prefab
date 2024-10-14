@@ -392,6 +392,17 @@ MonoBehaviour:
   volumeIncrement: 0.05
   decayRate: 0.09
   decayTime: 1
+  bars:
+  - {fileID: 5477729035252531046}
+  - {fileID: 6310746282648254388}
+  - {fileID: 1122097720676856988}
+  - {fileID: 7909518245928884545}
+  - {fileID: 1643184264417994818}
+  - {fileID: 9080546191078578508}
+  - {fileID: 1593467923541473417}
+  - {fileID: 7281415886589337309}
+  - {fileID: 2528901820946101070}
+  - {fileID: 3590115195666550358}
 --- !u!1 &1645653050111809133
 GameObject:
   m_ObjectHideFlags: 0

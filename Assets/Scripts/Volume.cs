@@ -13,9 +13,11 @@ public class Volume : MonoBehaviour
     public float decayRate;
     public float decayTime;
 
+    public SpriteRenderer[] bars;
+
     private int numberBarVolume = 0;
     private AudioSource m_AudioSource;
-    private SpriteRenderer[] bars;
+    //private SpriteRenderer[] bars;
     private float chrono;
 
 
@@ -24,7 +26,8 @@ public class Volume : MonoBehaviour
     {
         m_AudioSource = GetComponent<AudioSource>();
         m_AudioSource.volume = 0f;
-        bars = gameObject.GetComponentsInChildren<SpriteRenderer>();
+        //bars = gameObject.GetComponentsInChildren<SpriteRenderer>();
+        //PAS SUR DE L'ORDRE!!!!!!!!!!!!
 
         foreach (SpriteRenderer bar in bars)
         {
