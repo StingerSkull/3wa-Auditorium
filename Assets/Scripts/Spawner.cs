@@ -43,7 +43,7 @@ public class Spawner : MonoBehaviour
         {
             //Vector2 randomCircle = Random.insideUnitCircle * Camera.main.orthographicSize;
 
-            GameObject particle = poolParticles.Get();
+            poolParticles.Get();
             
             chrono = 0f;
         }
@@ -71,8 +71,7 @@ public class Spawner : MonoBehaviour
     // Called when an item is taken from the pool using Get
     void OnTakeItem(GameObject item)
     {
-        item.transform.position = (Vector2)transform.position + Random.insideUnitCircle * spawnRadius;
-        item.transform.rotation = transform.rotation;
+        item.transform.SetPositionAndRotation((Vector2)transform.position + Random.insideUnitCircle * spawnRadius, transform.rotation);
         item.SetActive(true);
     }
 
