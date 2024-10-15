@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 201652999359338270}
   - component: {fileID: 4827014480504547511}
   m_Layer: 0
-  m_Name: MusicBox
+  m_Name: PrefabMusicBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
