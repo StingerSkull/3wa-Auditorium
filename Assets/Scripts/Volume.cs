@@ -38,17 +38,10 @@ public class Volume : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_AudioSource.volume > 0f)
+        chrono += Time.deltaTime;
+        if (chrono >= decayTime)
         {
-            if (chrono >= decayTime)
-            {
-                m_AudioSource.volume -= Mathf.Min(m_AudioSource.volume, decayRate);
-                chrono = 0f;
-            }
-            else
-            {
-                chrono += Time.deltaTime;
-            }
+            m_AudioSource.volume -= Mathf.Min(m_AudioSource.volume, decayRate * Time.deltaTime);
         }
 
         numberBarVolume = 0;
@@ -67,9 +60,7 @@ public class Volume : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (m_AudioSource.volume < 1f)
-        {
-            m_AudioSource.volume += Mathf.Min(1f-m_AudioSource.volume, volumeIncrement);
-        }
+        m_AudioSource.volume += volumeIncrement;
+        chrono = 0f;
     }
 }
