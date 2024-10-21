@@ -11,7 +11,7 @@ public class PlayerHp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerHp.Test();
+        playerHp.hp = 5;
         textMeshProUGUI.text = playerHp.playerName;
     }
 
@@ -20,4 +20,11 @@ public class PlayerHp : MonoBehaviour
     {
         
     }
+
+    public void UpdatePlayerLife(int value)
+    {
+        playerHp.hp += value;
+        textMeshProUGUI.text = playerHp.hp.ToString();
+    }
+
 }
