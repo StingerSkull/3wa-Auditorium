@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject pausePanel;
     public GameObject pauseButton;
     public GameObject mouseManager;
+    public Image winBar;
 
     private GameObject[] musicBoxes;
     private float chrono;
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour
         if (counter >= musicBoxes.Length)
         {
             chrono += Time.deltaTime;
+            
             if (chrono >= timeToWin)
             {
                 winPanel.SetActive(true);
@@ -54,6 +57,7 @@ public class GameManager : MonoBehaviour
         {
             chrono = 0f;
         }
+        winBar.fillAmount = chrono / timeToWin;
     }
 
     public void Pause()
