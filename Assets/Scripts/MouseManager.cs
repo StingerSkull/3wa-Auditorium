@@ -12,20 +12,12 @@ public class MouseManager : MonoBehaviour
     public Texture2D cursorResize;
     public LayerMask layer;
 
-    [HideInInspector]
-    public bool isPaused = false;
-
     private Vector2 mousePosition;
     private GameObject _objectToMove;
     private GameObject _objectToResize;
     private CircleShape circleShape;
     private AreaEffector2D areaEffect;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -133,4 +125,5 @@ public class MouseManager : MonoBehaviour
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
+
 }

@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject pauseButton;
     public GameObject mouseManager;
     public Image winBar;
+    public GameEvent winEvent;
 
     private GameObject[] musicBoxes;
     private float chrono;
@@ -47,10 +48,7 @@ public class GameManager : MonoBehaviour
             
             if (chrono >= timeToWin)
             {
-                winPanel.SetActive(true);
-                mouseManager.SetActive(false);
-                pauseButton.SetActive(false);
-                canPaused = false;
+                winEvent.Trigger();
             }
         }
         else
@@ -85,6 +83,11 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void Win()
+    {
+        canPaused = false;
     }
 
     public void ChangeScene(string sceneName)
