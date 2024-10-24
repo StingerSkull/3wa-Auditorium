@@ -9,24 +9,20 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public float timeToWin = 1f;
-    public GameObject winPanel;
-    public GameObject pausePanel;
-    public GameObject pauseButton;
     public GameObject mouseManager;
-    public GameObject winBar;
     public GameEvent winEvent;
+    public FloatVariable winBarValue;
+    public BoolVariable isPaused;
 
     private GameObject[] musicBoxes;
     private float chrono;
     private int counter;
-    private bool isPaused = false;
     private bool canPaused = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        pausePanel.SetActive(isPaused);
-        winPanel.SetActive(false);
+        SceneManager.LoadScene("UI", LoadSceneMode.Additive);
         musicBoxes = GameObject.FindGameObjectsWithTag("MusicBox");
     }
 
@@ -55,18 +51,18 @@ public class GameManager : MonoBehaviour
         {
             chrono = 0f;
         }
-        winBar.GetComponent<Image>().fillAmount = chrono / timeToWin;
+        winBarValue._value = chrono / timeToWin;
     }
 
     public void Pause()
     {
         if (canPaused)
         {
-            isPaused = !isPaused;
-            pausePanel.SetActive(isPaused);
-            mouseManager.SetActive(!isPaused);
+            isPaused._value = !isPaused._value;
+            //pausePanel.SetActive(isPaused);
+            mouseManager.SetActive(!isPaused._value);
 
-            if (isPaused)
+            if (isPaused._value)
             {
                 Time.timeScale = 0f;
                 foreach (GameObject mBox in musicBoxes)
