@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject pausePanel;
     public GameObject pauseButton;
     public GameObject mouseManager;
-    public Image winBar;
+    public GameObject winBar;
     public GameEvent winEvent;
 
     private GameObject[] musicBoxes;
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
         {
             chrono += Time.deltaTime;
             
-            if (chrono >= timeToWin)
+            if (chrono >= timeToWin && canPaused)
             {
                 winEvent.Trigger();
             }
@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         {
             chrono = 0f;
         }
-        winBar.fillAmount = chrono / timeToWin;
+        winBar.GetComponent<Image>().fillAmount = chrono / timeToWin;
     }
 
     public void Pause()
