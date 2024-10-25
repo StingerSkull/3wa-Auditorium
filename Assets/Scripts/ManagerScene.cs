@@ -26,7 +26,7 @@ public class ManagerScene : MonoBehaviour
     void Update()
     {
         winBar.GetComponent<Image>().fillAmount = winBarValue._value;
-        indexText.text = gameData.currentLevelIndex.ToString();
+        indexText.text = GameData.indexGameData.index.ToString();
     }
 
     public void Pause()
@@ -36,9 +36,9 @@ public class ManagerScene : MonoBehaviour
 
     public void Win()
     {
-        if (gameData.currentLevelIndex < gameData.levels.Count - 1)
+        if (GameData.indexGameData.index < gameData.levels.Count - 1)
         {
-            gameData.levels[gameData.currentLevelIndex + 1].unlock = true;
+            SetLevels.unlockLevels[gameData.levels[GameData.indexGameData.index + 1]] = true;
         }
         else
         {

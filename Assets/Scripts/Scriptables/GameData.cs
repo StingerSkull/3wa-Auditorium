@@ -6,21 +6,23 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(fileName = "new GameData", menuName = "Game/GameData")]
 public class GameData : ScriptableObject
 {
-    public int currentLevelIndex;
+    
     public List<LevelData> levels;
+
+    public static IndexGameData indexGameData = new();
 
     public void GoTolevel(int index)
     {
-        currentLevelIndex = index;
-        SceneManager.LoadScene(levels[currentLevelIndex].sceneName);
+        indexGameData.index = index;
+        SceneManager.LoadScene(levels[indexGameData.index].sceneName);
     }
     public void ReloadLevel()
     {
-        SceneManager.LoadScene(levels[currentLevelIndex].sceneName);
+        SceneManager.LoadScene(levels[indexGameData.index].sceneName);
     }
     public void LoadNextLevel()
     {
-        currentLevelIndex++;
-        SceneManager.LoadScene(levels[currentLevelIndex].sceneName);
+        indexGameData.index++;
+        SceneManager.LoadScene(levels[indexGameData.index].sceneName);
     }
 }

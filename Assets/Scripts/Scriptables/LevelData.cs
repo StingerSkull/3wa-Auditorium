@@ -8,6 +8,6 @@ public class LevelData : ScriptableObject
     public Sprite icon;
     public string sceneName;
     public string levelName;
-    public bool unlock = false;
+    public bool unlock;
 
 }

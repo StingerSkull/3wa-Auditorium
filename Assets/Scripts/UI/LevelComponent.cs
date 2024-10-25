@@ -15,7 +15,7 @@ public class LevelComponent : MonoBehaviour
 
     public void Initialize(LevelData data)
     {
-        if (data.unlock)
+        if (SetLevels.unlockLevels[data])
         {
             levelIcon.sprite = data.icon;
         }
@@ -25,7 +25,7 @@ public class LevelComponent : MonoBehaviour
         }
         
         levelNameLabel.text = data.levelName;
-        levelButton.interactable = data.unlock;
+        levelButton.interactable = SetLevels.unlockLevels[data];
 
         /*
         levelButton.onClick.AddListener(delegate
