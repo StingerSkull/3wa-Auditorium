@@ -6,5 +6,4 @@ public abstract class BaseVariable<T> : ScriptableObject
 {
     public T _value;
 
-    public abstract void Move();
 }

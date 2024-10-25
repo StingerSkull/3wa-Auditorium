@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(fileName = "new GameData", menuName = "Game/GameData")]
 public class GameData : ScriptableObject
 {
-    public int currentLevelIndex =0;
+    public int currentLevelIndex;
     public List<LevelData> levels;
 
     public void GoTolevel(int index)
