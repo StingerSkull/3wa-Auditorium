@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isPaused._value = false;
         SceneManager.LoadScene("UI", LoadSceneMode.Additive);
         musicBoxes = GameObject.FindGameObjectsWithTag("MusicBox");
     }
@@ -59,7 +60,6 @@ public class GameManager : MonoBehaviour
         if (canPaused)
         {
             isPaused._value = !isPaused._value;
-            //pausePanel.SetActive(isPaused);
             mouseManager.SetActive(!isPaused._value);
 
             if (isPaused._value)

@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ManagerScene : MonoBehaviour
 {
     public GameObject pausePanel;
     public GameObject winPanel;
+    public GameObject nextLevelBtn;
     public GameObject winBar;
 
     public BoolVariable isPaused;
@@ -27,6 +30,23 @@ public class ManagerScene : MonoBehaviour
     public void Pause()
     {
         pausePanel.SetActive(isPaused._value);
+    }
+
+    public void Win()
+    {
+        if (gameData.currentLevelIndex < gameData.levels.Count - 1)
+        {
+            gameData.levels[gameData.currentLevelIndex + 1].unlock = true;
+        }
+        else
+        {
+            nextLevelBtn.SetActive(false);
+        }
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
 }

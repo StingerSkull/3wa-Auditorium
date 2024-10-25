@@ -10,9 +10,4 @@ public class LevelData : ScriptableObject
     public string levelName;
     public bool unlock = false;
 
-    public float highScore;
-    public float time;
-    public int stars;
-    public float completion;
-
 }

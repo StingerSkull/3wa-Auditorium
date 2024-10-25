@@ -9,13 +9,23 @@ public class LevelComponent : MonoBehaviour
 {
     public TextMeshProUGUI levelNameLabel;
     public Image levelIcon;
+    public Sprite levelLock;
     public Button levelButton;
+    public GameData gameData;
 
     public void Initialize(LevelData data)
     {
-        levelIcon.sprite = data.icon;
+        if (data.unlock)
+        {
+            levelIcon.sprite = data.icon;
+        }
+        else
+        {
+            levelIcon.sprite = levelLock;
+        }
+        
         levelNameLabel.text = data.levelName;
-        levelButton.interactable = !data.unlock;
+        levelButton.interactable = data.unlock;
 
         /*
         levelButton.onClick.AddListener(delegate
@@ -25,7 +35,7 @@ public class LevelComponent : MonoBehaviour
         */
 
         levelButton.onClick.AddListener(() => {
-            SceneManager.LoadScene(data.sceneName);
+            gameData.GoTolevel(gameData.levels.IndexOf(data));
         });
     }
 }

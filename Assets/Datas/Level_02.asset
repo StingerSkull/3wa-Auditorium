@@ -12,11 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6237b6413886344bc52405fdd34e46, type: 3}
   m_Name: Level_02
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 4cfd060333d38d942baaa6ecca68812d, type: 3}
   sceneName: Level_02
   levelName: Level 2
-  unlock: 1
-  highScore: 0
-  time: 0
-  stars: 0
-  completion: 0
+  unlock: 0

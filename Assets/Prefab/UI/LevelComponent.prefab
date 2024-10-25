@@ -119,7 +119,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelNameLabel: {fileID: 1334215301060205579}
   levelIcon: {fileID: 3656031770708396913}
+  levelLock: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   levelButton: {fileID: 3677303265415667656}
+  gameData: {fileID: 11400000, guid: 863915993aedf684ea62d51d9bc8ef2c, type: 2}
 --- !u!1 &5342120104583699886
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +159,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 30}
+  m_SizeDelta: {x: 0, y: 81.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7059683273037753204
 CanvasRenderer:
@@ -410,7 +412,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 135}
+  m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4288168323872115262
 CanvasRenderer:
