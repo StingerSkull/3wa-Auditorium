@@ -11,7 +11,6 @@ public class ManagerScene : MonoBehaviour
     public GameObject winPanel;
     public GameObject nextLevelBtn;
     public GameObject winBar;
-    public TextMeshProUGUI indexText;
 
     public BoolVariable isPaused;
     public FloatVariable winBarValue;
@@ -26,7 +25,6 @@ public class ManagerScene : MonoBehaviour
     void Update()
     {
         winBar.GetComponent<Image>().fillAmount = winBarValue._value;
-        indexText.text = GameData.indexGameData.index.ToString();
     }
 
     public void Pause()
